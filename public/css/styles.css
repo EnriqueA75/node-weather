@@ -68,6 +68,14 @@ body {
   .formcont{
     margin-left: 5rem;
   }
+  @media screen and (max-width: 600px) {
+    .formcont, .contain {
+      width: 100%;
+      margin-left: 1rem;
+      margin-bottom: 4rem;
+    }
+  }
+
   input {
     border: 1px solid #CCCCCC;
     padding: 0.5rem;
