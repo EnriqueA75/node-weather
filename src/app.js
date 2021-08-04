@@ -59,7 +59,7 @@ app.get('/products', (req, res) => {
 app.get('/weather', (req, res) => {
     if(!req.query.address){
         return res.send({
-            error: 'You must provide a search term.'
+            error: 'You must provide a search term'
         })
     }
     geocode(req.query.address, (error, {location} = {} )=> {
