@@ -10,6 +10,7 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#messageOne')
 const messageTwo = document.querySelector('#messageTwo')
+const messageThree = document.querySelector('#messageThree')
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -22,7 +23,7 @@ weatherForm.addEventListener('submit', (e) => {
             if(data.error) {
                 messageOne.textContent = (error)
             } else {
-                console.log(data)
+                messageThree.textContent = (`Country code: ${data.features[0].context[1].short_code}`).toUpperCase()
                 messageOne.textContent = (data.features[0].center[0], data.features[0].center[1], data.features[0].place_name)
                 const info = data.features[0].center
                 messageTwo.textContent =(`Latitude ${info[1]} and longitude ${info[0]}`)
